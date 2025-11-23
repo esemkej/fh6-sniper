@@ -1,26 +1,69 @@
-First of all, if you want to edit and publish this program in any way, feel free to do so, but please credit me.
+# FH5 Sniper
 
-How this program works:  
-It's a simple script that automatically presses the correct keys to refresh and buy auctions. To see if there's an active auction it checks the correct pixel for correct white color with some headroom. After it tries to buy out the auction, it waits a little and checks another pixel to see if the buyout was successful or not, to avoid any unwanted behaviour. It supports 3 different methods of sniping which are described below. Even though the script itself is around 16KB, the file size is 45MB because I'm using pyinstaller --onefile which packs a whole lot of stuff inside the exe.  
-**Sniping methods:**  
-**1. Safe sniping:** This will always pick a slightly random value of how much time it should wait between inputs, making it less detectable if there's any detection present. This will also work on lower fps and **I advise you to keep using this one** unless it's necessary for you to use a different one.  
-**2. Normal sniping:** This is the basic method from older versions but it's deprecated. Will also work nicely on lower fps.  
-**3. Quick sniping:** This is a highly experimental method where I tried to minimize the wait time between inputs. It starts to break down under 120fps but try to get more (e.g. 144fps, 165fps...) to avoid issues. I don't advise you to use it unless absolutely necessary, for example when encountering car that is in such a high demand, the normal sniping doesn't stand a chance.
+A compact tool for automating car buyouts in Forza Horizon 5 auctions.
+Designed to repeatedly refresh auction tabs, detect available cars, and instantly buy them out using pixel detection.
 
-**The code takes a while to initalize itself, so if you're looking at a clear cmd, everything is working as it's supposed to, just give it a few seconds**  
-Use tutorial:  
-**1. If you're running an aspect ratio different from 16:9, you have to toggle full-screen off, otherwise you'll find yourself with an infinite sniper**  
-2. Lock your fps at a stable value to avoid any issues  
-3. Go in to the auctions tab and search for the vehicle you'd like to snipe  
-4. You can toggle infinite sniping by pressing the designated button  
-5. **Make sure the focused window in the auction house is the search for auctions one** and then press **S** and just let it run  
-6. If you toggled infinite sniping, the script will continue to snipe cars after buying the first one, otherwise it would go back to the auction house and stop  
+---
 
-**Custom sniping**  
-This tool also has an option for custom sniping where you can directly change all the timings as well as pixel position to really fine tune it for your pc. I suppose that with this option, you should be able to use this bot with any screen res as well as ratio.  
-The app also displays default values (taken from normal sniping) in case you want to keep some timings as they were (highly recommended)
+## Features
 
-If there are any issues, reread this readme first and if nothing works, feel free to leave an issue message, I'll try to look at it asap.
+* **Graphical Interface (GUI):** A simple window-based interface for easy operation.
+* **Command-Line Interface (CLI):** Run the bot directly in a terminal if the GUI behaves unexpectedly.
+* **Sniping Methods:**
 
-**What to expect with new releases:**  
-Fully cmd operated version without any UI whatsoever in case the UI version causes bugs.
+  * **Safe:** Randomized delays between inputs for stability and lower detectability; works on lower FPS.
+  * **Normal:** Standard method from previous versions; compatible with most FPS values.
+  * **Quick:** Minimal delay between inputs for high-FPS setups (144+ FPS recommended).
+* **Custom Mode:** Manually adjust all pixel positions and delay timings for fine-tuning to your system or screen resolution.
+* **Infinite Mode:** After successfully buying out a car, the bot continues searching and sniping automatically until manually stopped.
+* **Automated Detection & Buyout:** Checks a pixel for the correct color to detect active auctions and buys out instantly; verifies success before proceeding.
+* **Fully CMD-Operated Startup:** Launch the EXE, type `cli` for command-line mode or `gui` for graphical mode, and press Enter to start.
+
+---
+
+## Usage
+
+1. **Setup:**
+
+   * Ensure your auction house window is open and focused on the auction house screen.
+   * Lock your FPS to a stable value and toggle fullscreen off if using a non-16:9 resolution.
+
+2. **Run the EXE:**
+
+   * Type `gui` to use the graphical interface, or `cli` to use the command-line version. Press Enter to start.
+
+3. **Choose Sniping Method:** Safe, Normal, Quick, Custom (fine-tune delays and pixel positions), or Infinite Mode for continuous sniping.
+
+4. **Start Sniping:**
+
+   * Press the designated start key.
+   * If infinite sniping is enabled, the bot will continue after each buyout; otherwise it stops after the first car.
+
+5. **Custom Sniping:** Adjust all timings and pixel positions to optimize performance for your system. Default values are displayed for reference.
+
+---
+
+## Technical Info
+
+* Script size: ~30 KB
+* EXE size: ~60 MB (packed with all dependencies using PyInstaller)
+
+---
+
+## What's New (v0.8)
+
+* Added command-line interface for users experiencing GUI issues.
+* Fixed a threading bug that could crash message display.
+* Other bug fixes and further improvements.
+
+---
+
+## What to Expect in Future Releases
+
+* General stability improvements and minor performance updates.
+
+---
+
+## License
+
+This project is licensed under the terms described in the `LICENSE` file.
