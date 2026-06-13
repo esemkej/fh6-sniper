@@ -1,3 +1,8 @@
+# FH6 Sniper
+Alpha version of the new and improved sniper bot for Forza Horizon 6 auctions.
+Works largely the same but only in CLI mode for now
+More info in the help command print
+
 # FH5 Sniper
 
 A compact tool for automating car buyouts in Forza Horizon 5 auctions.
