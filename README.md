@@ -1,11 +1,70 @@
 # FH6 Sniper
-Alpha version of the new and improved sniper bot for Forza Horizon 6 auctions.
-Works largely the same but only in CLI mode for now
-More info in the help command print
+
+A rebuilt sniper bot for Forza Horizon 6 auctions, sharing FH5 Sniper's core approach of repeatedly refreshing auction tabs, detecting available cars, and instantly buying them out using pixel detection - now with a full graphical interface to match.
 
 ---
 
-# FH5 Sniper
+## Features
+
+* **Graphical Interface (GUI):** A frameless, dark-themed window for quick control over mode, infinite sniping, and custom settings, with live status messages.
+* **Command-Line Interface (CLI):** The full terminal version, with the same commands and keybinds as the GUI - handy if you prefer it or the GUI misbehaves.
+* **Sniping Methods:**
+
+  * **Normal:** Standard method compatible with most FPS values.
+  * **Quick:** Reduced delays for high-FPS setups.
+  * **Fastest:** Fixed, minimal delays for maximum speed.
+  * **Safe:** Randomized delays between inputs for stability and lower detectability; works on lower FPS.
+* **Custom Mode:** Fine-tune every delay and pixel coordinate - in the GUI's dedicated setup page, or step-by-step in the terminal - with invalid values rejected before they're applied.
+* **Infinite Mode:** Keep sniping automatically after every successful buyout, until manually stopped.
+* **Automated Detection & Buyout:** Checks pixel colors to detect active, unsold auctions and buys out instantly, verifying success before proceeding.
+* **Global Keybinds:** `Ctrl + R` toggles sniping on/off and `Ctrl + Q` force-quits, both working even while the window isn't focused.
+* **Debug Mode:** Falls back automatically if the Forza window can't be found, so the bot can still be configured and tested without the game running.
+
+---
+
+## Usage
+
+1. **Setup:**
+
+   * Ensure your auction house window is open and focused on the auction house screen.
+   * Lock your FPS to a stable value.
+
+2. **Launch the script:** Run in GUI or CLI mode.
+
+3. **Choose Sniping Method:** Normal, Quick, Fastest, Safe, or Custom (fine-tune delays and pixel positions) - via the mode dropdown in the GUI, or the `mode` command in the CLI.
+
+4. **Start Sniping:**
+
+   * Press Start (GUI) or use the `start [delay]` command (CLI), or trigger `Ctrl + R` at any time.
+   * If Infinite sniping is enabled, the bot keeps going after each buyout; otherwise it stops after the first car.
+
+5. **Custom Sniping:** Selecting Custom mode opens a dedicated setup page in the GUI, or walks you through each value in the terminal in CLI mode, to adjust every delay and pixel coordinate for your system.
+
+---
+
+## Technical Info
+
+* Script size: ~50 KB
+* EXE size: ~60 MB (packed with all dependencies using PyInstaller)
+
+---
+
+## What's New (v0.2)
+
+* Added a full graphical interface alongside the CLI, matching FH5 Sniper's ease of use.
+* Added a dedicated Custom mode setup page with input validation for delays and coordinates.
+* Added an Infinite sniping toggle and live status toasts for mode changes and sniping state.
+* Carried over the global `Ctrl + R` / `Ctrl + Q` keybinds from the CLI version.
+
+---
+
+## What to Expect in Future Releases
+
+* General stability improvements as the GUI moves out of alpha.
+
+---
+
+# [FH5 Sniper](https://github.com/esemkej/fh6-sniper/releases/tag/v0.8)
 
 A compact tool for automating car buyouts in Forza Horizon 5 auctions.
 Designed to repeatedly refresh auction tabs, detect available cars, and instantly buy them out using pixel detection.
@@ -33,7 +92,7 @@ Designed to repeatedly refresh auction tabs, detect available cars, and instantl
 1. **Setup:**
 
    * Ensure your auction house window is open and focused on the auction house screen.
-   * Lock your FPS to a stable value and toggle fullscreen off if using a non-16:9 resolution.
+   * Lock your FPS to a stable value.
 
 2. **Run the EXE:**
 
